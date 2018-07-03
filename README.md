@@ -6,51 +6,45 @@ A mathematical model of glucose-stimulated local renin-angiotensin system (RAS) 
 ## Overview
 The code for the model is provided as is, without guarantees and without support. The corresponding manuscript describing the model is currently under review for publication.
 
-## Glucose RAS in Podocytes Model
+## Combined Glucose RAS in Podocytes ACE Inhibition in PKPD Model
 ### Authors
-Minu R. Pilvankar, Michele A. Higgins, and Ashlee N. Ford Versypt, 
+Minu R. Pilvankar, Hui Ling Yong, and Ashlee N. Ford Versypt, 
 School of Chemical Engineering,
 Oklahoma State University.
 Corresponding author: A. N. Ford Versypt, ashleefv@okstate.edu
 
 ## Related Publication for Model Details
-M. R. Pilvankar, M. A. Higgins, A. N. Ford Versypt, Mathematical Model for Glucose Dependence of the Local Renin-Angiotensin System in Podocytes, submitted 2017.
+M. R. Pilvankar, H. L. Yong, A. N. Ford Versypt, Mathematical Model for Glucose Dependence of the Local Renin-Angiotensin System in Podocytes, submitted 2018.
 
 ### Main files
+* MAIN.m.
+   Runs the model manually either in the Editor or by passing arguments in the
+   command line. Can specify plot_mode to produce and save publication-quality plots.
 
-* param_estimation_Approach1and2.m. Runs the model to estimate the parameters using Approach 1 and Appraoch 2 (described in the manuscript). The simulation results compare the change in concentration of Angiotensin II (ANG II) with increasing glucose for Approach 1 and different scenarios of Approach 2. The results are compared using root mean squared error (RMSE) using a data set from literature.
-* param_estimation_Approach3.m. Runs the model to estimate the parameters using Approach 3 (described in the manuscript). The simulation results compare the change in concentration of ANG II with increasing glucose for Approach 3.
-* Sensanalysis.m. Runs local sensitivity analysis on ANG II with respect to all the parameters. The resulting plots show sensitivity of all the parameters at normal and high glucose states.
-* globalsensitivity.m. Runs global sensitivity analysis on ANG II with respect to all the parameters. The resulting plots show two sensitivity indices S_i (ﬁrst-order index) and S_{Ti} (total-order index which accounts for higher-order and non-linear interactions between the parameters) for ANG II with respect to each input parameter.
+### Dependent & supplemental files
 
-### Supplementary files
- 
-* glucoseRASssA12.m. Runs through param_estimation_Approach1and2.m and returns ANG II concentration by solving the set of equations. It is used to pass different set of coefficients for each case of Approach 1 and 2.
-* glucoseRASssA3.m. Runs through param_estimation_Approach1and2.m and returns ANG II concentration by solving the set of equations. It is used to pass different set of coefficients for Approach 3.
-* glucoseRASssSens.m. Runs through param_estimation_Approach1and2.m and returns ANG II concentration by solving the set of equations. It is used to pass the parameter values at NG and HG with a devaition to do the sensitivity analysis.
+* combinedRAS_ACE_PKPD.m.
+   The central file that uses case-specific parameters and dosing information 
+   as input to the PKPD model of ACE inhibitor dose impact on AngII 
+   concentration in podocytes. Output includes the vectors of time and the concentrations of 
+   the drug diacid form, AGT, AngI, AngII, and Renin and the percent of inhibition 
+   (not in this order). Note: do not run this file directly. Instead let it be called by call_combinedRAS_ACE_PKPD.m
+   (described subsequently) that correctly defines all the input values.
 
- Needed to run the programs to pass data, parameters, and calculated values.
-* scenario0.m
-* scenario1.m
-* scenario2.m
-* scenario3.m
-* scenario4.m
-* scenarioM0.m.
-* Approach3.m
-* NG.mat
-* NGHG.mat
+* .mat files contain parameters described in the paper.
+   
+* call_combinedRAS_ACE_PKPD_.m.
+   Used by modifiedrun_PKPD_without_GUI.m. 
+   Sets up parameters before calling combinedRAS_ACE_PKPD.m for a scalar 
+   value of tfinal_dosing. Output is all of the output from 
+   combinedRAS_ACE_PKPD.m with options for plotting and saving figures
+   through plot_mode string.
+   
+* .mat files. 
+   Needed to run the programs to pass data, parameters, and calculated values.
+   
+* NormalCurvefitGlucoseDynamics.m.
+ Polyfit to representative normal and diabetic subject glucose dynamic profiles.
 
- For running globalsensitivity.m
-* efast_sd.m
-* efast_ttest.m
-* parameterdist.m
-* Parameter_settings_eFAST.m
-* SETFREQ.m
-  
-    
-* export_fig.m
-   MATLAB package to nicely export figures.
-   Download: https://www.mathworks.com/matlabcentral/fileexchange/23629-export-fig
-   Tips for usage: https://github.com/altmany/export_fig/blob/master/README.md
 
-(c) Ashlee N. Ford Versypt, 2017
+(c) Minu R. Pilvankar, Hui Ling Yong, and Ashlee N. Ford Versypt, 2018
