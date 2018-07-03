@@ -1,7 +1,7 @@
 # COMBINEDglucoseRASpodocytesACEInhibPKPD
 A mathematical model of glucose-stimulated local renin-angiotensin system (RAS) in podocytes combined with a PKPD model of ACE inhibition of the RAS
 
-[![DOI](https://zenodo.org/badge/94033856.svg)](https://zenodo.org/badge/latestdoi/94033856)
+[![DOI](https://zenodo.org/badge/139523228.svg)](https://zenodo.org/badge/latestdoi/139523228)
 
 ## Overview
 The code for the model is provided as is, without guarantees and without support. The corresponding manuscript describing the model is currently under review for publication.
