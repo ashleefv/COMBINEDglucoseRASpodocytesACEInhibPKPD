@@ -16,9 +16,9 @@ Oklahoma State University.
 Corresponding author: A. N. Ford Versypt, ashleefv@okstate.edu
 
 ## Related Publication for Model Details
-[1] Pilvankar, Minu R., Michele A. Higgins, and Ashlee N. Ford Versypt. "Mathematical Model for Glucose Dependence of the Local Renin–Angiotensin System in Podocytes." Bulletin of mathematical biology 80, no. 4 (2018): 880-905.
+[1] Pilvankar, Minu R., Michele A. Higgins, and Ashlee N. Ford Versypt. "Mathematical Model for Glucose Dependence of the Local Renin–Angiotensin System in Podocytes." Bulletin of Mathematical Biology, 80, no. 4 (2018): 880-905.
 
-[2] Pilvankar, Minu R., Hui L. Yong, and Ashlee N. Ford Versypt. "A Glucose-Dependent Pharmacokinetic/Pharmacodynamic Model of ACE Inhibition in Kidney Cells." Processes, to be submitted, 2019
+[2] Pilvankar, Minu R., Hui L. Yong, and Ashlee N. Ford Versypt. "A Glucose-Dependent Pharmacokinetic/Pharmacodynamic Model of ACE Inhibition in Kidney Cells." Processes, submitted, 2019
 
 ### Main files
 * MAIN.m.
