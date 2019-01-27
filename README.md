@@ -16,7 +16,9 @@ Oklahoma State University.
 Corresponding author: A. N. Ford Versypt, ashleefv@okstate.edu
 
 ## Related Publication for Model Details
-M. R. Pilvankar, H. L. Yong, A. N. Ford Versypt, Mathematical Model for Glucose Dependence of the Local Renin-Angiotensin System in Podocytes, submitted 2018.
+[1] Pilvankar, Minu R., Michele A. Higgins, and Ashlee N. Ford Versypt. "Mathematical Model for Glucose Dependence of the Local Renin–Angiotensin System in Podocytes." Bulletin of mathematical biology 80, no. 4 (2018): 880-905.
+
+[2] Pilvankar, Minu R., Hui L. Yong, and Ashlee N. Ford Versypt. "A Glucose-Dependent Pharmacokinetic/Pharmacodynamic Model of ACE Inhibition in Kidney Cells." Processes, to be submitted, 2019
 
 ### Main files
 * MAIN.m.
@@ -48,7 +50,7 @@ M. R. Pilvankar, H. L. Yong, A. N. Ford Versypt, Mathematical Model for Glucose 
 * NormalCurvefitGlucoseDynamics.m.
  Polyfit to representative normal and diabetic subject glucose dynamic profiles.
 
-### Generating plots
+### Generating plots for paper [2]
 * script_generate_plots.m
 Runs the local and systemic RAS model files to generate plots in the paper. Takes in figure number as an input (3-10) corresponding th the figure numbers in the paper.
 
