@@ -29,7 +29,7 @@ hANG1_9 = log(2)/(24*60);
 hANGIII = log(2)/(0.5*60);
 hAT1 = log(2)/(1.5*60);
 hAT2 = log(2)/(1.5*60);
-Km = 1250;
+
 
 %% Steady state mass balances for each species
 n = [-AGT,1,0,0,0,0,0,0; ...
@@ -52,7 +52,7 @@ save('NGvalues','NGvalues');
 % f(3) = c_at2*ANGII-hAT2*AT2; %dAT2/dt
 % f(4) = c_apa*ANGII-hANGIII*ANGIII; %dANGIII/dt
 % f(5) = c_nep*ANGI+c_ace2*ANGII-hANG1_7*ANG1_7; %dANG1_7/dt
-% f(6) = (Vm*AGT/(Km+AGT))-((c_ACE + c_nep + c_ace2 + hANGI))*ANGI; %dANGI/dt 
+% f(6) = (Vm*AGT)-((c_ACE + c_nep + c_ace2 + hANGI))*ANGI; %dANGI/dt 
 % f(7) = (c_ACE)*ANGI-(c_ace2 + c_apa + c_at1 + c_at2 + hANGII)*ANGII; %dANGII/dt
 % %f(8) = 1.5*c_ace-5*c_nonace;
 % f(9) = kAGT-(Vm/(Km+AGT)+hAGT)*AGT; % dAGT/dt

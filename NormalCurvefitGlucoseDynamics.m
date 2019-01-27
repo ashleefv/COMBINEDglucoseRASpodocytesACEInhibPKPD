@@ -5,7 +5,7 @@
 % CODE GENERATED THE COEFFICIENTS OF THE POLYNOMIAL EQUATION EXPECTED TO DEFINE THE
 % CURVE.
 function out = NormalCurvefitGlucoseDynamics
-%close all
+close all
 
 % %Diabetic data set (data1)
 xdata = [0	2734.177215	3281.012658	3827.848101	5741.772152	8065.822785	8475.949367	8886.075949	9979.746835	11483.5443	12577.21519	14081.01266	15448.10127	16678.48101	17362.02532	18182.27848	19002.53165	20643.03797	21463.29114	23787.34177	26658.22785	28982.27848	31169.62025	33220.25316	34997.46835	36501.26582	37458.22785	39508.86076	38005.06329	40329.11392	41832.91139	42653.16456	43883.5443	45250.63291	46070.88608	47437.97468	47848.10127	48668.35443	49898.73418	51265.82278	52632.91139	54136.70886	55093.67089	56324.05063	57554.43038	58921.51899	61108.86076	62612.65823	64526.58228	65210.12658	66440.50633	68081.01266	70131.64557	70951.89873	73139.24051	75053.16456	77103.79747	79291.13924	79974.68354	81888.60759	83392.40506	85306.32911	86400];% for diabetic patient from paper
@@ -66,25 +66,25 @@ end
    
 %% Plot for polyfit
 
-redd=[0.6350, 0.0780, 0.1840];
-orang=	[0.9290, 0.6940, 0.1250];
-bl=	[0.4940, 0.1840, 0.5560];
-adm=[0.3010, 0.7450, 0.9330];
+red=[0.6350, 0.0780, 0.1840];
+blue = [0, 0.4470, 0.7410];
+green=[0.4660, 0.6740, 0.1880];
+yellow = [0.9290, 0.6940, 0.1250];
+
 xhours2 = xdata2./3600;
-% plot(xhours1,ydata1,'ko',xhours1,y1,'b-','LineWidth',2)
-% plot(xhours1,ydata1,'ko','LineWidth',2,'MarkerSize',4)
+
 figure(1)
  
-plot(xdata1,ydata1,'x',xdata1,y1,'--','LineWidth',1.5,'Color',bl,'MarkerSize',5,'MarkerEdgeColor',adm)
+plot(xdata1,ydata1,'o',xdata1,y1,'-','LineWidth',2,'Color',blue,'MarkerSize',5,'MarkerEdgeColor',green)
 hold on
-plot(xdata2,ydata2,'o',xdata2,y2,'-.','LineWidth',1.5,'Color',redd,'MarkerSize',4,'MarkerEdgeColor',orang)
+plot(xdata2,ydata2,'x',xdata2,y2,'-.','LineWidth',3,'Color',red,'MarkerSize',6,'MarkerEdgeColor',yellow)
  
  hold off
-%legend('Data for diabetic subject',['Fit for diabetic Subject; RMSE = ' num2str(round(RMSEd,3))],...
-%    'Data for normal subject',['Fit for normal Subject; RMSE = ' num2str(round(RMSEn(i),3))])
+legend('*Data points for normal subject','Fit for normal subject',...
+   '*Data points for diabetic subject','Fit for diabetic subject','Location','NorthEast')
 %legend('Data for subject1','Fit for subject 1')
 xlabel('Time (hours)','Fontsize',10)
-ylabel('Glucose (mM)','Fontsize',10)
+ylabel('[Glucose] (mmol/L)','Fontsize',10)
 axis([0 24 0 25])
 set(gca,'Fontsize',10);
 ax = gca;
@@ -96,15 +96,15 @@ set(gcf, 'Color', 'w','Units', 'inches', 'Position', [0 0 5 3]);
 % save('p2','p2');
 %%
 %Trying to make a plot of the fit polynomial alone
-figure(4)
-% % t = [0,24];
-% %these values are from p2 generated earlier by polyfit
-% %w = 4.158+(26.17.*t)-(39.80.*t.^2)+(27.96.*t.^3)-(11.24.*t.^4)+(2.84.*t.^5)-(0.47.*t.^6)+(0.054.*t.^7)-(0.0043.*t.^8)+(0.00023.*t.^9)-(8.75e-6.*t.^10)+(2.1e-7.*t.^11)-(2.95e-9.*t.^12)+(1.84e-11.*t.^13)
-equation = poly2sym(p2);
-syms x t
-glucose_con = subs(equation,x,t)
-w = polyval(p2,xdata2);
-plot(xdata2,w);
+% figure(4)
+% % % t = [0,24];
+% % %these values are from p2 generated earlier by polyfit
+% % %w = 4.158+(26.17.*t)-(39.80.*t.^2)+(27.96.*t.^3)-(11.24.*t.^4)+(2.84.*t.^5)-(0.47.*t.^6)+(0.054.*t.^7)-(0.0043.*t.^8)+(0.00023.*t.^9)-(8.75e-6.*t.^10)+(2.1e-7.*t.^11)-(2.95e-9.*t.^12)+(1.84e-11.*t.^13)
+% equation = poly2sym(p2);
+% syms x t
+% glucose_con = subs(equation,x,t)
+% w = polyval(p2,xdata2);
+% plot(xdata2,w);
 end
 end
 
